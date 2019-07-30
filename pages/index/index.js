@@ -1,4 +1,4 @@
-// pages/index/index.js
+import {promise} from "../../request/promise.js"
 Page({
   data: {
     // 轮播图
@@ -16,39 +16,33 @@ Page({
   },
   // 获取轮播图
   getSwaper(){
-   wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/home/swiperdata',
-      success: (result) => {
-        // console.log(result)
-        this.setData({
-          swiperList:result.data.message
-        })
-      },
-    });    
+    promise({
+      url:'/home/swiperdata'
+    }).then(result=>{
+      this.setData({
+        swiperList:result.data.message
+      })
+    })         
   },
   // 获取导航栏
   getNav(){
-    wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/home/catitems',
-      success: (result) => {
-        // console.log(result)
-        this.setData({
-          navList:result.data.message
-        })
-      },
-    });  
+    promise({
+      url:'/home/catitems'
+    }).then(result=>{
+      this.setData({
+        navList:result.data.message
+      })
+    })
   },
   // 获取商品楼层
   getGoodsFloor(){
-    wx.request({
-      url: 'https://api.zbztb.cn/api/public/v1/home/floordata',
-      success: (result) => {
-        console.log(result)
-        this.setData({
-          floorList:result.data.message
-        })
-      },
-    });
+    promise({
+      url:'/home/floordata'
+    }).then(result=>{
+      this.setData({
+        floorList:result.data.message
+      })
+    })
   }
   
     
