@@ -1,3 +1,29 @@
 .swiperContarnet swiper {
   height: 340rpx;
 }
+.navTitle {
+  display: flex;
+}
+.navTitle navigator {
+  flex: 1;
+  padding: 30rpx;
+}
+.goods_floor .floor .floor_content {
+  padding: 10rpx;
+  overflow: hidden;
+}
+.goods_floor .floor .floor_content navigator {
+  width: 33.33%;
+  float: left;
+}
+.goods_floor .floor .floor_content navigator:nth-last-child(-n+4) {
+  height: 207.08154506rpx;
+  padding-left: 10rpx;
+}
+.goods_floor .floor .floor_content navigator:nth-last-child(-n+2) {
+  padding-top: 10rpx;
+}
+.goods_floor .floor .floor_content navigator image {
+  /* 存在默认宽高 让其继承navigator的高度 */
+  height: 100%;
+}
