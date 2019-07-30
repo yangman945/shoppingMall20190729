@@ -1,1 +1,3 @@
-/* pages/index/index.wxss */
+.swiperContarnet swiper {
+  height: 340rpx;
+}

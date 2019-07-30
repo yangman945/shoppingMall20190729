@@ -1,0 +1,17 @@
+/* 引入字体图标样式 */
+@import "./styles/iconfont.wxss";
+
+/* 初始化全局样式 */
+page,view,text,swiper,swiper-item,image,navigator,input,button{
+    box-sizing: border-box;
+  }
+  image{
+    width: 100%;
+  }
+
+  /* 自定义css变量 */
+  page{
+      --themeColor:#eb4450;
+      color:#666;
+      font-size: 28rpx;
+  }

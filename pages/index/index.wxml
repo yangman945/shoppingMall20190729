@@ -1,2 +1,14 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<searchinput></searchinput>
+<!-- 轮播图开始 -->
+<view class="swiperContarnet">
+<swiper autoplay circular indicator-dots>
+    <swiper-item 
+    wx:for="{{swiperList}}"
+    wx:key="goods_id">
+        <navigator >
+            <image src="{{item.image_src}}"></image>
+        </navigator>
+    </swiper-item>  
+</swiper>
+</view>
+<!-- 轮播图结束 -->
