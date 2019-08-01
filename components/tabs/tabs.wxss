@@ -1,0 +1,15 @@
+.Tabs{
+    display: flex;
+    height: 80rpx;
+    font-size: 32rpx;
+}
+.Tabs .Tabs_item{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Tabs .Tabs_style{
+    color:var(--themeColor);
+    border-bottom: 2rpx solid currentColor;
+}

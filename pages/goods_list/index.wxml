@@ -1,2 +1,25 @@
-<!--pages/goods_list/index.wxml-->
-<text>pages/goods_list/index.wxml</text>
+<searchinput></searchinput>
+<tabs tabsList="{{tabs}}" bindgetIndex="handlegetIndex">
+    <block wx:if="{{tabs[0].isActive}}">
+        <view class="goodsList">
+            <view class="goodsListContainer"
+            wx:for="{{goodsList}}"
+            wx:key="{{cat_id}}">
+                <view class="goodsLeft">
+                    <image mode="widthFix" 
+                    src="{{item.goods_small_logo || 'http://img0.imgtn.bdimg.com/it/u=2381247408,1568314224&fm=26&gp=0.jpg' }}" />
+                </view>
+                <view class="goodsRight">
+                    <view class="goodsName">
+                        {{item.goods_name}}
+                    </view>
+                    <view class="goodsPrice">
+                        ￥{{item.goods_price}}
+                    </view>
+                </view>
+            </view>
+        </view>
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">2</block>
+    <block wx:elif="{{tabs[2].isActive}}">3</block>
+</tabs>
