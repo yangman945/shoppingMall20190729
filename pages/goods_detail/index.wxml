@@ -1,2 +1,51 @@
-<!--pages/goods_detail/index.wxml-->
-<text>pages/goods_detail/index.wxml</text>
+<view class="goodsDtContainer">
+    <!-- 轮播图开始 -->
+    <swiper autoplay indicator-dots circular >
+        <swiper-item
+        wx:for="{{goodsDetailList.pics}}"
+        wx:key="pics_id" >
+            <image mode="widthFix" src="{{item.pics_mid}}" />
+        </swiper-item>
+    </swiper>
+    <!-- 轮播图结束 -->
+    <!-- 价格及介绍开始 -->
+     <view class="goodsDtContent">
+         <view class="goodsPrice">
+             ￥{{goodsDetailList.goods_price}}
+         </view>
+         <view class="goodsDtName">
+             <view class="goodsText">
+                 {{goodsDetailList.goods_name}}
+             </view>
+             <view class="shoucang">
+                 <text class="iconfont icon-icon-test4"></text>
+                 <text>收藏</text>
+             </view>
+         </view>
+     </view>
+    <!-- 价格及介绍结束 -->
+    <view class="goodsDeTitle">
+        图文详情
+    </view>
+    <view class="goodsDandI">
+        <rich-text nodes="{{goodsDetailList.goods_introduce}}" ></rich-text>
+    </view>
+    <view class="bottomNav">
+        <view class="avtion">
+            <text class="iconfont icon-icon-test2"></text>
+            <view class="kefu">客服</view>
+            <button open-type="contact" ></button>
+        </view>
+        <view class="avtion">
+            <text class="iconfont icon-icon-test6"></text>
+            <view class="fengxian">分享</view>
+            <button open-type="share"></button>
+        </view>
+        <view class="avtion">
+            <text class="iconfont icon-icon-test"></text>
+            <view class="cart">购物车</view>
+        </view>
+        <view class="addCart">加入购物车</view>
+        <view class="buy">立即购买</view>
+    </view>
+</view>

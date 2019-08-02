@@ -1,1 +1,99 @@
-/* pages/goods_detail/index.wxss */
+.goodsDtContainer {
+  padding-bottom: 90rpx;
+}
+.goodsDtContainer swiper {
+  height: 420rpx;
+  text-align: center;
+}
+.goodsDtContainer swiper image {
+  width: 50%;
+}
+.goodsDtContainer .goodsDtContent {
+  padding: 20rpx;
+}
+.goodsDtContainer .goodsDtContent .goodsPrice {
+  padding-bottom: 10rpx;
+  color: var(--themeColor);
+  font-size: 34rpx;
+  font-weight: 600;
+}
+.goodsDtContainer .goodsDtContent .goodsDtName {
+  display: flex;
+}
+.goodsDtContainer .goodsDtContent .goodsDtName .goodsText {
+  flex: 4;
+  font-size: 28rpx;
+  color: black;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  padding-right: 10rpx;
+}
+.goodsDtContainer .goodsDtContent .goodsDtName .shoucang {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-left: 2rpx solid #eee;
+}
+.goodsDtContainer .goodsDtContent .goodsDtName .shoucang .iconfont {
+  font-size: 36rpx;
+  color: var(--themeColor);
+}
+.goodsDtContainer .goodsDeTitle {
+  padding: 10rpx;
+  border-top: 10rpx solid #eee;
+  font-size: 38rpx;
+  font-weight: inherit;
+  color: var(--themeColor);
+}
+.goodsDtContainer .goodsDandI {
+  text-align: center;
+}
+.goodsDtContainer .bottomNav {
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: #fff;
+  height: 90rpx;
+  width: 100%;
+  border-top: 1rpx solid #eee;
+}
+.goodsDtContainer .avtion {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 28rpx;
+  position: relative;
+}
+.goodsDtContainer .avtion button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.goodsDtContainer .addCart {
+  flex: 2;
+  background-color: orange;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 600;
+  text-align: center;
+  line-height: 90rpx;
+}
+.goodsDtContainer .buy {
+  flex: 2;
+  background-color: var(--themeColor);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 600;
+  text-align: center;
+  line-height: 90rpx;
+}
