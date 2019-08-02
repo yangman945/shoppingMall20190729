@@ -1,1 +1,3 @@
-/* pages/cart/index.wxss */
+.cartContainer .chooseAddress button {
+  border-radius: none;
+}

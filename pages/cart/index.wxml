@@ -1,2 +1,8 @@
-<!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="cartContainer">
+    <!-- 添加收货地址开始 -->
+    <view class="chooseAddress">
+        <button
+        bindtap="handlechooseAddress">+ 添加收货地址</button>
+    </view>
+    <!-- 添加收货地址结束 -->
+</view>
