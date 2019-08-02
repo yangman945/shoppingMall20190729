@@ -41,11 +41,14 @@
             <view class="fengxian">分享</view>
             <button open-type="share"></button>
         </view>
-        <view class="avtion">
+        <navigator 
+        open-type="switchTab"
+        url="/pages/cart/index"
+        class="avtion">
             <text class="iconfont icon-icon-test"></text>
             <view class="cart">购物车</view>
-        </view>
-        <view class="addCart">加入购物车</view>
+        </navigator>
+        <view class="addCart" bindtap="handleAddCart">加入购物车</view>
         <view class="buy">立即购买</view>
     </view>
 </view>

@@ -18,7 +18,7 @@
                 <text >/</text>{{item1.cat_name}}<text >/</text>
             </view>
             <view class="right_item">
-                <navigator wx:for="{{item1.children}}"
+                <navigator open-type="navigate" wx:for="{{item1.children}}"
                 wx:for-index="index2"
                 wx:for-item="item2"
                 wx:key="cat_id"

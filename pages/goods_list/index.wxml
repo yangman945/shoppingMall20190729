@@ -2,7 +2,7 @@
 <tabs tabsList="{{tabs}}" bindgetIndex="handlegetIndex">
     <block wx:if="{{tabs[0].isActive}}">
         <view class="goodsList">
-            <navigator class="goodsListContainer"
+            <navigator open-type="navigate" class="goodsListContainer"
             wx:for="{{goodsList}}"
             wx:key="{{cat_id}}"
             url="/pages/goods_detail/index?goods_id={{item.goods_id}}">

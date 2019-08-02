@@ -1,5 +1,6 @@
 import {promise} from "../../request/promise.js"
 import regeneratorRuntime from '../../lib/runtime/runtime';
+import { getstorageCategory,setstorageCategory } from '../../utils/storage'
 Page({
   data: {
     current:0,
@@ -14,9 +15,9 @@ Page({
   ovrelist : [],
   onLoad(){
     // 2在发送请求之前先判断有没有缓存数据，没有再发送，本地存储的默认值为空字符串
-    const cacheList = wx.getStorageSync("cacheList");
-    console.log(cacheList,Date.now());
-    
+    // const cacheList = addCart()
+    // 调用封装的方法
+    const cacheList = getstorageCategory()
     // 3如果本地存储有数据就使用缓存，否则就是空字符串，就要发送请求
     if(cacheList){
     // 4在使用之前我们要判断本地缓存的数据有没有过期，过期的话还是要请求新数据
@@ -43,7 +44,8 @@ Page({
   // 获取商品分类数据
  async getCategory(){
      const {data} = await promise({url:'/categories'})
-     wx.setStorageSync("cacheList", {time:Date.now(),data:data.message});
+    //  调用封装的方法
+     setstorageCategory({time:Date.now(),data:data.message})
        this.ovrelist =data.message
        const left_menuList = this.ovrelist.map(v=>(
          {cat_id:v.cat_id,cat_name:v.cat_name} 
