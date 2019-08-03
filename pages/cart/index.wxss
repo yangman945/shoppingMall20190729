@@ -1,3 +1,20 @@
-.cartContainer .chooseAddress button {
-  border-radius: none;
+.cartContainer {
+  /* 添加收货地址 */
+  /* 地址信息 */
+}
+.cartContainer .address {
+  padding: 20rpx;
+  width: 100%;
+  border-bottom: 2rpx solid #ccc;
+}
+.cartContainer .address .userMessage {
+  display: flex;
+  color: black;
+  font-size: 32rpx;
+}
+.cartContainer .address .userMessage .userName {
+  flex: 1;
+}
+.cartContainer .address .userMessage .userPhone {
+  flex: 4;
 }

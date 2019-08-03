@@ -1,8 +1,28 @@
 <view class="cartContainer">
     <!-- 添加收货地址开始 -->
-    <view class="chooseAddress">
+    <view wx:if="{{!(address&&address.all)}}" class="chooseAddress">
         <button
         bindtap="handlechooseAddress">+ 添加收货地址</button>
     </view>
     <!-- 添加收货地址结束 -->
+    <!-- 收货地址开始 -->
+    <view wx:else class="address">
+        <view class="userMessage">
+            <text class="userName">
+                {{address.userName}}
+            </text>
+            <text class="userPhone">
+                {{address.telNumber}}
+            </text>
+        </view>
+        <view class="userAddress">
+            {{address.all}}
+        </view>
+    </view>
+    <!-- 收货地址结束 -->
+    <!-- 购物车列表开始 -->
+    <view class="cartList">
+
+    </view>
+    <!-- 购物车列表结束 -->
 </view>
