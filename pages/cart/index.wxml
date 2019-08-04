@@ -20,9 +20,71 @@
         </view>
     </view>
     <!-- 收货地址结束 -->
-    <!-- 购物车列表开始 -->
-    <view class="cartList">
+    <view class="cart_main">
+  <view class="cart_main_title">购物车</view>
+  <view class="cart_main_content">
+    <block>
+      <view class="cart_item" 
+      wx:for="{{cartList}}"
+      wx:for-index="key"
+      wx:for-item="value"
+      wx:key="value">
+        <!-- 复选框  -->
+        <view class="cart_chk_wrap">
+          <checkbox-group
+          data-goodsId="{{value.goods_id}}"  
+          bindchange="handleChangeisActive">
+            <checkbox checked="{{value.checked}}" color="red"></checkbox>
+          </checkbox-group>
+        </view>
+        <!-- 商品的图片 -->
+        <view class="cart_img_wrap">
+          <image mode="widthFix" src="{{value.goods_big_logo}}"></image>
+        </view>
+        <!-- 商品的信息 -->
+        <view class="cart_info">
+          <view class="goods_name">{{value.goods_name}}</view>
+          <view class="goods_price_wrap">
+            <view class="goods_price">￥{{value.goods_price}}</view>
+            <view class="cart_tool">
+              <text class="cart_num_edit"
+              data-addandsub="{{-1}}"
+              data-goodsId="{{value.goods_id}}"
+              bindtap="handleChangeGoodsNum">-</text>
+              <text class="cart_num">{{value.num}}</text>
+              <text class="cart_num_edit"
+              data-addandsub="{{1}}"
+              data-goodsId="{{value.goods_id}}"
+              bindtap="handleChangeGoodsNum">+</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:if="{{isShow}}">
+      <view class="empty_img_wrap">
+      
+        <image mode="widthFix"
+          src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1564923102&di=f3d5dfac393cbd3de7b13c055595ed5a&src=http://b-ssl.duitang.com/uploads/item/201503/16/20150316230046_BXBAs.jpeg">
+        </image>
+      </view>
+    </block>
+  </view>
+</view>
 
-    </view>
-    <!-- 购物车列表结束 -->
+
+<!-- 底部工具栏 -->
+<view class="btm_tool">
+  <view class="all_check_wrap">
+    <checkbox-group bindchange="handleChangeAll">
+      <checkbox color="red" checked="{{allchecked}}">全选</checkbox>
+    </checkbox-group>
+  </view>
+  <view class="total_price_wrap">
+    <view class="total_price"> 合计: <text>￥{{cartTotalPrice}}</text> </view>
+    <view class="freight_tips">包含运费</view>
+  </view>
+  <view class="cart_pay"
+  bindtap="handlePay" >结算({{cartTotalNum}})</view>
+</view>
 </view>

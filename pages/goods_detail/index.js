@@ -51,6 +51,7 @@ Page({
       cart[this.goodsData.goods_id] = this.goodsData
       // 在商品的信息里面添加新属性 商品数量
       cart[this.goodsData.goods_id].num = 1    
+      cart[this.goodsData.goods_id].checked = true    
     }
     // 添加商品到购物车的方法
     addCart(cart)

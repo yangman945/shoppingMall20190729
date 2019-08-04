@@ -50,3 +50,21 @@
         });     
     })
  }
+
+ /**
+  * 提示框信息
+  * {object} data
+  */
+ export const Message = (data) => {
+    return new Promise(( resolve , reject ) =>{
+        wx.showToast( {
+            title: data.title,
+            success: (result) => {
+              resolve(result)
+            },
+            fail: (err) => {
+                reject(err)
+            },
+          });
+    })
+ }
