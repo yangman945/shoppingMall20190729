@@ -40,6 +40,8 @@
 }
 .goodsDtContainer .goodsDtContent .goodsDtName .shoucang .iconfont {
   font-size: 36rpx;
+}
+.goodsDtContainer .goodsDtContent .goodsDtName .shoucang .collect {
   color: var(--themeColor);
 }
 .goodsDtContainer .goodsDeTitle {

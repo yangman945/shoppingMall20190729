@@ -4,7 +4,9 @@ import { addCart } from "../../utils/storage";
 
 Page({
   data: {
-    goodsDetailList:[]
+    goodsDetailList:[],
+    // 收藏激活颜色 默认没有收藏
+    isCollect:false
   },
   // 图片预览
   handleImagePreview(e){
@@ -32,8 +34,12 @@ Page({
       pics:data.message.pics,
       goods_introduce:data.message.goods_introduce
     }
+    // 判断当前商品是否收藏 
+    let collectGoods = wx.getStorageSync("collectGoods")||[];
+    let isCollect = collectGoods.some(v=>v.goods_id === data.message.goods_id)
     this.setData({
-      goodsDetailList
+      goodsDetailList,
+      isCollect
     })
   },
   // 添加购物车逻辑
@@ -62,5 +68,30 @@ Page({
     });
       
 
+  },
+  // 商品添加逻辑
+  handleCollectGoods(){
+    // 1、我们将收藏的商品对象以数组的形式缓存在本地
+    // 2、获取本地收藏的数组，但可能为空字符串，所以给默认值
+    // 3、对本地数组进行判断 如果在收藏数组中就将其删除，没有加添加 
+    let collectGoods = wx.getStorageSync("collectGoods")||[];
+    // 返回符合测试条件的元素的索引，不存在则返回-1
+    console.log(this.goodsData.goods_id)
+    // console.log(collectGoods)
+    let index = collectGoods.findIndex(v=>
+      v.goods_id === this.goodsData.goods_id,
+    )
+    console.log(index)
+    if(index === -1){
+      // 在收藏数组中没有这个对象，将其收藏
+      collectGoods.push(this.goodsData)
+      this.setData({isCollect:true})
+    }else{
+      // 存在这个商品对象，将其取消收藏
+      collectGoods.splice(index,1)
+      this.setData({isCollect:false})
+    }
+    wx.setStorageSync('collectGoods', collectGoods);
+      
   }
 })
