@@ -1,2 +1,47 @@
-<!--pages/pay/index.wxml-->
-<text>pages/pay/index.wxml</text>
+<view class="revice_wrap">
+  <view  class="revice_address">
+    <view class="revice_user">
+      <view>收货人:{{address.userName}}</view>
+      <view></view>
+    </view>
+    <view class="revice_phone">
+      
+    </view>
+  </view>
+</view>
+
+<view class="cart_main">
+  <view class="cart_main_title">结算</view>
+  <view class="cart_main_content">
+   
+      <view class="cart_item" 
+      wx:for="{{cart}}"
+      wx:for-item="value"
+      wx:for-index="key"
+      wx:key="goods_id" >
+        <!-- 商品的图片 -->
+        <view class="cart_img_wrap">
+          <image mode="widthFix" src="{{value.goods_small_logo}}"></image>
+        </view>
+        <!-- 商品的信息 -->
+        <view class="cart_info">
+          <view class="goods_name">{{value.goods_name}}</view>
+          <view class="goods_price_wrap">
+            <view class="goods_price">￥{{value.goods_price}}</view>
+            <view class="cart_tool">
+              <text class="cart_num"> X {{value.num}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+  </view>
+</view>
+
+<!-- 底部工具栏 -->
+<view class="btm_tool">
+  <view class="total_price_wrap">
+    <view class="total_price"> 合计: <text>￥{{totalPrice}}</text> </view>
+    <view class="freight_tips">包含运费</view>
+  </view>
+  <view class="cart_pay" bindtap="handleOrderPay">支付({{totalNum}})</view>
+</view>
