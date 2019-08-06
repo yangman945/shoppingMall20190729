@@ -1,2 +1,54 @@
-<!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<view class="user_bg">
+  <!-- 大的背景图片 -->
+  <image class="user_bg_avatar" src="{{userinfo.avatarUrl}}"></image>
+  <!-- 小的头像和昵称 -->
+  <view class="user_icon_wrap">
+    <image src="{{userinfo.avatarUrl}}"></image>
+    <view class="user_name">{{userinfo.nickName}}</view>
+  </view>
+</view>
+
+<view class="user_content">
+  <view class="user_main">
+    <view class="history_item">
+      <navigator>
+        <view class="his_num">1</view>
+        <view class="his_name">收藏的店铺</view>
+      </navigator>
+      <navigator url="/pages/collect/index">
+        <view class="his_num">{{collectLegnth}}</view>
+        <view class="his_name">收藏的商品</view>
+      </navigator>
+      <navigator>
+        <view class="his_num">1</view>
+        <view class="his_name">关注的商品</view>
+      </navigator>
+      <navigator>
+        <view class="his_num">1</view>
+        <view class="his_name">我的足迹</view>
+      </navigator>
+    </view>
+    <view class="order_item">
+      <view class="order_item_title">我的订单</view>
+      <view class="order_item_content">
+        <navigator url="/pages/order/index?type=1">
+          <text class="iconfont icon-ding_dan"></text>
+          <view class="order_name">全部订单</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=2">
+          <text class="order_icon iconfont icon-fukuantongzhi"></text>
+          <view class="order_name">待付款</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=3">
+          <text class="order_icon iconfont icon-receipt-address"></text>
+          <view class="order_name">待发货</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=4">
+          <text class="order_icon iconfont icon-tuihuotuikuan_dianpu"></text>
+          <view class="order_name">退款/退货</view>
+        </navigator>
+      </view>
+
+    </view>
+  </view>
+</view>

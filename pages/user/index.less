@@ -1,0 +1,76 @@
+page{
+    background-color: #edece8;
+  }
+  .user_bg{
+    height: 45vh;
+    overflow: hidden;
+    position: relative;
+    .user_bg_avatar{
+      // css3 滤镜
+      filter:blur(20rpx);
+    }
+    .user_icon_wrap{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 30%;
+      image{
+        width: 160rpx;
+        height: 160rpx;
+        border-radius: 50%;
+      }
+      .user_name{
+        color: #fff;
+      }
+    }
+  }
+  
+  .user_content {
+  
+    position: relative;
+    .user_main {
+      position: absolute;
+      width: 90%;
+      left: 50%;
+      top: -50rpx;
+      transform: translateX(-50%);
+      .history_item {
+        padding: 20rpx 0;
+        display: flex;
+        background-color: #fff;
+        text-align: center;
+        navigator {
+          flex: 1;
+          .his_num {
+            color: var(--themeColor);
+          }
+  
+          .his_name {
+  
+          }
+        }
+      }
+  
+      .order_item{
+        background-color: #fff;
+        margin-top: 30rpx;
+        .order_item_title{
+          padding: 20rpx;
+          border-bottom: 1rpx solid #dedede;
+        }
+        .order_item_content{
+          display: flex;
+          navigator{
+            padding: 10rpx 0;
+            flex: 1;
+            text-align: center;
+            .iconfont{
+              color: var(--themeColor);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  

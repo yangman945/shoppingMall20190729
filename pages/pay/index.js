@@ -99,7 +99,7 @@ Page({
         await Message({title:'支付成功'}) 
         // 支付成功后跳转到订单页面
         wx.navigateTo({
-          url: '/pages/order/index'
+          url: '/pages/user/index'
         });
           
       }

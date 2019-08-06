@@ -1,1 +1,66 @@
-/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.user_bg {
+  height: 45vh;
+  overflow: hidden;
+  position: relative;
+}
+.user_bg .user_bg_avatar {
+  filter: blur(20rpx);
+}
+.user_bg .user_icon_wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+}
+.user_bg .user_icon_wrap image {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+}
+.user_bg .user_icon_wrap .user_name {
+  color: #fff;
+}
+.user_content {
+  position: relative;
+}
+.user_content .user_main {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  top: -50rpx;
+  transform: translateX(-50%);
+}
+.user_content .user_main .history_item {
+  padding: 20rpx 0;
+  display: flex;
+  background-color: #fff;
+  text-align: center;
+}
+.user_content .user_main .history_item navigator {
+  flex: 1;
+}
+.user_content .user_main .history_item navigator .his_num {
+  color: var(--themeColor);
+}
+.user_content .user_main .order_item {
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+.user_content .user_main .order_item .order_item_title {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #dedede;
+}
+.user_content .user_main .order_item .order_item_content {
+  display: flex;
+}
+.user_content .user_main .order_item .order_item_content navigator {
+  padding: 10rpx 0;
+  flex: 1;
+  text-align: center;
+}
+.user_content .user_main .order_item .order_item_content navigator .iconfont {
+  color: var(--themeColor);
+}
