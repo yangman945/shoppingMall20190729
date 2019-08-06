@@ -1,6 +1,7 @@
 import {promise} from "../../request/promise.js"
 import regeneratorRuntime from '../../lib/runtime/runtime';
 import { addCart } from "../../utils/storage";
+import { Message } from "../../utils/wx-async.js";
 
 Page({
   data: {
@@ -70,28 +71,29 @@ Page({
 
   },
   // 商品添加逻辑
-  handleCollectGoods(){
+handleCollectGoods(){
     // 1、我们将收藏的商品对象以数组的形式缓存在本地
     // 2、获取本地收藏的数组，但可能为空字符串，所以给默认值
     // 3、对本地数组进行判断 如果在收藏数组中就将其删除，没有加添加 
     let collectGoods = wx.getStorageSync("collectGoods")||[];
     // 返回符合测试条件的元素的索引，不存在则返回-1
-    console.log(this.goodsData.goods_id)
+    // console.log(this.goodsData.goods_id)
     // console.log(collectGoods)
     let index = collectGoods.findIndex(v=>
       v.goods_id === this.goodsData.goods_id,
     )
-    console.log(index)
+    // console.log(index)
     if(index === -1){
       // 在收藏数组中没有这个对象，将其收藏
       collectGoods.push(this.goodsData)
       this.setData({isCollect:true})
+      Message({title:'收藏成功'})
     }else{
       // 存在这个商品对象，将其取消收藏
       collectGoods.splice(index,1)
       this.setData({isCollect:false})
+      Message({title:'取消收藏'})
     }
-    wx.setStorageSync('collectGoods', collectGoods);
-      
+    wx.setStorageSync('collectGoods', collectGoods);    
   }
 })

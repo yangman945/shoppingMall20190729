@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 5,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -89,6 +89,14 @@
 					"id": -1,
 					"name": "授权页面",
 					"pathName": "pages/auth/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": "搜索页面",
+					"pathName": "pages/search/index",
+					"query": "id=111",
 					"scene": null
 				}
 			]
